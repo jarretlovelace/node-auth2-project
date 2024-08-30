@@ -77,7 +77,11 @@ function generateToken(user) {
     role_name: user.role_name
   };
 
-  return jwt.sign(payload, JWT_SECRET, options); //eslint-disable-line
+  const options = {
+    expiresIn: 'Id',
+  };
+
+  return jwt.sign(payload, JWT_SECRET, options);
 }
 
 module.exports = router;
